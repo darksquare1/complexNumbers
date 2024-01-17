@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-const double EPSILON = 1e-9;
+constexpr double EPSILON = 1e-9;
 
 ComplexNumber::ComplexNumber() : real(0.0), imaginary(0.0) {}
 
