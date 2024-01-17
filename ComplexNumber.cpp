@@ -4,7 +4,7 @@
 
 constexpr double EPSILON = 1e-9;
 
-ComplexNumber::ComplexNumber() : real(0.0), imaginary(0.0) {}
+ComplexNumber::ComplexNumber() : real(0), imaginary(0) {}
 
 ComplexNumber::ComplexNumber(double real, double imaginary) : real(real), imaginary(imaginary) {}
 

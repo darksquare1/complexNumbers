@@ -18,7 +18,7 @@ int main() {
 
     assert(c1.power(2).isEqual(ComplexNumber(-5, 12)));
 
-    assert(c1.getModulus() == sqrt(13.0));
+    assert(std::abs(c1.getModulus() - sqrt(13)) < 10e-9);
 
     c1.print();
     c2.print();
