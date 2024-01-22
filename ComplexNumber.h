@@ -40,6 +40,10 @@ public:
     double getModulus() const;
 
     void print() const;
+
+    explicit operator int() const;
+    explicit operator float() const;
+    operator std::string() const;
 };
 
 

@@ -101,8 +101,29 @@ void ComplexNumber<T>::print() const {
     std::cout << "(" << real << " + " << imaginary << "i)" << std::endl;
 }
 
+template<typename T>
+ComplexNumber<T>::operator int() const {
+    return static_cast<int>(real);
+}
+
+template<typename T>
+ComplexNumber<T>::operator float() const {
+    return static_cast<float>(real);
+}
+
+template<typename T>
+ComplexNumber<T>::operator std::string() const {
+    std::string realStr = std::to_string(real);
+    std::string imaginaryStr = std::to_string(imaginary);
+    realStr.erase(realStr.find_last_not_of('0') + 1, std::string::npos);
+    imaginaryStr.erase(imaginaryStr.find_last_not_of('0') + 1, std::string::npos);
+
+    return "(" + realStr + " + " + imaginaryStr + "i)";
+}
+
 template
 class ComplexNumber<double>;
 
 template
 class ComplexNumber<int>;
+

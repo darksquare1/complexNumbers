@@ -77,6 +77,37 @@ int main() {
         assert(std::string(e.what()) == "Division by zero");
     }
 
+    // Double precision tests
+    ComplexNumber<double> c11(2.5, 3.7);
+
+    // Test cast to int
+    int intValue = static_cast<int>(c11);
+    assert(intValue == 2);
+
+    // Test cast to float
+    float floatValue = static_cast<float>(c11);
+    assert(std::abs(floatValue - 2.5) < 10e-9);
+
+    // Test cast to string
+    std::string stringValue = static_cast<std::string>(c11);
+    std::cout << "stringValue: " << stringValue << std::endl;
+    assert(stringValue == "(2.5 + 3.7i)");
+
+    // Integer precision tests
+    ComplexNumber<int> c12(2, 3);
+
+    // Test cast to int
+    int intValue2 = static_cast<int>(c12);
+    assert(intValue2 == 2);
+
+    // Test cast to float
+    float floatValue2 = static_cast<float>(c12);
+    assert(std::abs(floatValue2 - 2) < 10e-9);
+
+    // Test cast to float
+    std::string stringValue2 = static_cast<std::string>(c12);
+    assert(stringValue2 == "(2 + 3i)");
+
     std::cout << "All tests passed" << std::endl;
 
     return 0;
